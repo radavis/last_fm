@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe LastFM::Artist do
+describe LastFM::Artist, :vcr do
   context 'searching' do
     it 'returns a list of relevant artists' do
       artist_name = 'Aphex Twin'
