@@ -9,5 +9,11 @@ describe LastFM::Artist, :vcr do
       expect(results.first).to be_kind_of(LastFM::Artist)
       expect(results.first.name).to eql(artist_name)
     end
+
+    it 'returns an image for an artist' do
+      artist_name = 'Nirvana'
+      results = LastFM::Artist.search(artist_name)
+      expect(results.first.images[:large]).to include('.jpg')
+    end
   end
 end

@@ -1,12 +1,19 @@
 require 'faraday'
 require 'json'
+require 'pry'
 
 module LastFM
   class Artist
-    attr_reader :name
+    attr_reader :name, :image, :images
 
     def initialize(attributes)
       @name = attributes['name']
+
+      @images = {}
+      attributes['image'].each do |image|
+        @images[image['size'].to_sym] = image['#text']
+      end
+      @image = @images[:mega]
     end
 
     class << self
