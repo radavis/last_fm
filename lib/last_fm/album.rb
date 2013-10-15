@@ -1,9 +1,9 @@
 module LastFM
-  class Artist < Result
+  class Album < Result
     class << self
       def search(phrase)
-        Query.search('artist.search', phrase)
+        Query.search('album.search', phrase)
       end
     end # class << self
-  end # class Artist
+  end # class Album
 end # module LastFM
