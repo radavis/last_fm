@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'pry'
 
 describe LastFM::Album, :vcr do
   context 'searching' do
