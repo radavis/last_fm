@@ -1,16 +1,18 @@
 module LastFM
   class Query
     class << self
-      def search(method, phrase)
-        type = method.split('.').first.downcase
+      def retrieve_from_api(args={})
         response = connection.get('/2.0/', {
-          method: method,
-          type.to_sym => phrase,
           api_key: LastFM.api_key,
           format: 'json'
-        })
+        }.merge(args))
 
         parsed_results = JSON.parse(response.body)
+      end
+
+      def search(args={})
+        type = args[:method].split('.').first.downcase
+        parsed_results = retrieve_from_api(args)
         type_matches = type + 'matches'
 
         if parsed_results['results'] && parsed_results['results'][type_matches]
@@ -23,17 +25,8 @@ module LastFM
       end
 
       # Query.get_info('album.get_info', artist, album)
-      def get_info(method, artist, album)
-        response = connection.get('/2.0/', {
-          method: method,
-          api_key: LastFM.api_key,
-          artist: artist,
-          album: album,
-          format: 'json'
-        })
-
-        parsed_results = JSON.parse(response.body)
-
+      def get_info(args={})
+        parsed_results = retrieve_from_api(args)
         if parsed_results['album']
           Album.new(parsed_results['album'])
         else

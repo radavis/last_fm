@@ -6,6 +6,7 @@ require "last_fm/query"
 require "last_fm/result"
 require "last_fm/artist"
 require "last_fm/album"
+require "last_fm/track"
 
 module LastFM
   def self.api_key=(key)

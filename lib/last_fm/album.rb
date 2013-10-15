@@ -17,24 +17,13 @@ module LastFM
     end
 
     class << self
-      def search(phrase)
-        Query.search('album.search', phrase)
+      def search(album)
+        Query.search({ method: 'album.search', album: album })
       end
 
       def get_info(artist, album)
-        Query.get_info('album.getInfo', artist, album)
+        Query.get_info({ method: 'album.getInfo', artist: artist, album: album })
       end
     end # class << self
   end # class Album
-
-  class Track
-    attr_reader :name, :duration, :mbid, :url
-
-    def initialize(name, duration, mbid, url)
-      @name = name
-      @duration = duration
-      @mbid = mbid
-      @url = url
-    end
-  end
 end # module LastFM
