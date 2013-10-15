@@ -1,13 +1,13 @@
 module LastFM
   class Query
     class << self
-      def search(method, phrase, format='json')
+      def search(method, phrase)
         type = method.split('.').first.downcase
         response = connection.get('/2.0/', {
           method: method,
           type.to_sym => phrase,
           api_key: LastFM.api_key,
-          format: format
+          format: 'json'
         })
 
         parsed_results = JSON.parse(response.body)
@@ -19,6 +19,25 @@ module LastFM
           end
         else
           []
+        end
+      end
+
+      # Query.get_info('album.get_info', artist, album)
+      def get_info(method, artist, album)
+        response = connection.get('/2.0/', {
+          method: method,
+          api_key: LastFM.api_key,
+          artist: artist,
+          album: album,
+          format: 'json'
+        })
+
+        parsed_results = JSON.parse(response.body)
+
+        if parsed_results['album']
+          Album.new(parsed_results['album'])
+        else
+          nil
         end
       end
 
