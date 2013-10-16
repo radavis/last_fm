@@ -1,11 +1,12 @@
 module LastFM
   class Album < Result
-    attr_reader :mbid, :released, :tracks
+    attr_reader :mbid, :artist, :released, :tracks
 
     def initialize(attributes)
       super(attributes)
 
       @mbid = attributes['mbid'] if attributes['mbid']
+      @artist = attributes['artist'] if attributes['artist']
       @released = attributes['releasedate'] if attributes['releasedate']
 
       @tracks = []

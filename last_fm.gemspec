@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'last_fm/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "last_fm"
+  spec.name          = "radavis_last_fm"
   spec.version       = LastFM::VERSION
   spec.authors       = ["Richard Davis"]
   spec.email         = ["rdavis.bacs@gmail.com"]
