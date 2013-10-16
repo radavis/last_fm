@@ -1,20 +1,6 @@
 # LastFm
 
-TODO: Write a gem description
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'last_fm'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install last_fm
+Uses the Last.fm API to retrieve information for Artists and Albums
 
 ## Usage
 
