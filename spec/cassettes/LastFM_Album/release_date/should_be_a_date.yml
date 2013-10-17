@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ws.audioscrobbler.com/2.0/?album=Dive&api_key=<LASTFM API KEY>&artist=Tycho&format=json&method=album.getInfo
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 17 Oct 2013 01:38:07 GMT
+      Server:
+      - Apache/2.2.22 (Unix)
+      X-Web-Node:
+      - www107
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Max-Age:
+      - '86400'
+      Cache-Control:
+      - max-age=86400
+      Expires:
+      - Fri, 18 Oct 2013 01:38:07 GMT
+      Vary:
+      - Accept-Encoding
+      Content-Length:
+      - '950'
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=utf-8;
+    body:
+      encoding: UTF-8
+      string: |
+        {"album":{"name":"Dive","artist":"Tycho","id":"279149788","mbid":"5d4bf97e-95cf-4085-bbfb-4cad7123e461","url":"http:\/\/www.last.fm\/music\/Tycho\/Dive","releasedate":"    3 Apr 2012, 00:00","image":[{"#text":"http:\/\/userserve-ak.last.fm\/serve\/34s\/68145134.png","size":"small"},{"#text":"http:\/\/userserve-ak.last.fm\/serve\/64s\/68145134.png","size":"medium"},{"#text":"http:\/\/userserve-ak.last.fm\/serve\/174s\/68145134.png","size":"large"},{"#text":"http:\/\/userserve-ak.last.fm\/serve\/300x300\/68145134.png","size":"extralarge"},{"#text":"http:\/\/userserve-ak.last.fm\/serve\/_\/68145134\/Dive.png","size":"mega"}],"listeners":"133819","playcount":"3197036","tracks":{"track":[{"name":"Dive","duration":"499","mbid":"f35804dc-4fbc-407f-9e97-3d27c32eab5b","url":"http:\/\/www.last.fm\/music\/Tycho\/_\/Dive","streamable":{"#text":"1","fulltrack":"0"},"artist":{"name":"Tycho","mbid":"6d56f5cf-211b-418a-ace2-2983c33f530f","url":"http:\/\/www.last.fm\/music\/Tycho"},"@attr":{"rank":"1"}},{"name":"Dive (Memoryhouse Remix)","duration":"245","mbid":"8db510b3-d3d5-4cfc-8e2d-685fe140856d","url":"http:\/\/www.last.fm\/music\/Tycho\/_\/Dive+(Memoryhouse+Remix)","streamable":{"#text":"1","fulltrack":"0"},"artist":{"name":"Tycho","mbid":"6d56f5cf-211b-418a-ace2-2983c33f530f","url":"http:\/\/www.last.fm\/music\/Tycho"},"@attr":{"rank":"2"}},{"name":"Dive (Keep Shelly In Athens Remix)","duration":"280","mbid":"be66488d-7526-407c-8d6c-265c97fac359","url":"http:\/\/www.last.fm\/music\/Tycho\/_\/Dive+(Keep+Shelly+In+Athens+Remix)","streamable":{"#text":"1","fulltrack":"0"},"artist":{"name":"Tycho","mbid":"6d56f5cf-211b-418a-ace2-2983c33f530f","url":"http:\/\/www.last.fm\/music\/Tycho"},"@attr":{"rank":"3"}}]},"toptags":{"tag":[{"name":"idm","url":"http:\/\/www.last.fm\/tag\/idm"},{"name":"downtempo","url":"http:\/\/www.last.fm\/tag\/downtempo"},{"name":"academia music","url":"http:\/\/www.last.fm\/tag\/academia%20music"},{"name":"deep house","url":"http:\/\/www.last.fm\/tag\/deep%20house"},{"name":"electronic","url":"http:\/\/www.last.fm\/tag\/electronic"}]},"wiki":{"published":"Thu, 27 Sep 2012 15:32:25 +0000","summary":"This album\u2019s tracklist is wrong. It should look like that :  01 - Tycho - A Walk\n 02 - Tycho - Hours\n 03 - Tycho - Daydream\n 04 - Tycho - Dive\n 05 - Tycho - Coastal Brake\n 06 - Tycho - Ascension\n 07 - Tycho - Melanine\n 08 - Tycho - Adrift\n 09 - Tycho - Epigram\n 10 - Tycho - Elegy ","content":"This album\u2019s tracklist is wrong. It should look like that :\n \n 01 - Tycho - A Walk\n 02 - Tycho - Hours\n 03 - Tycho - Daydream\n 04 - Tycho - Dive\n 05 - Tycho - Coastal Brake\n 06 - Tycho - Ascension\n 07 - Tycho - Melanine\n 08 - Tycho - Adrift\n 09 - Tycho - Epigram\n 10 - Tycho - Elegy \n        \nUser-contributed text is available under the Creative Commons By-SA License and may also be available under the GNU FDL."}}}
+    http_version: 
+  recorded_at: Thu, 17 Oct 2013 01:38:07 GMT
+recorded_with: VCR 2.6.0

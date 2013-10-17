@@ -7,10 +7,14 @@ module LastFM
 
       @mbid = attributes['mbid'] if attributes['mbid']
       @artist = attributes['artist'] if attributes['artist']
-      @released = attributes['releasedate'] if attributes['releasedate']
+
+
+      if attributes['releasedate'] and attributes['releasedate'].gsub(/\s+/, '').length > 0
+        @released = Date.parse(attributes['releasedate'])
+      end
 
       @tracks = []
-      if attributes['tracks']
+      if attributes['tracks'] and attributes['tracks']['track']
         attributes['tracks']['track'].each do |track|
           @tracks << Track.new(track['name'], track['duration'], track['mbid'], track['url'])
         end

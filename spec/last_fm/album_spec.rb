@@ -17,6 +17,19 @@ describe LastFM::Album, :vcr do
     end
   end
 
+  context 'release date' do
+    it 'should be a date' do
+      result = LastFM::Album.get_info('Tycho', 'Dive')
+      expect(result.released).to be_kind_of(Date)
+      expect(result.released).to eql(Date.parse('2012-04-03'))
+    end
+
+    it 'should be nil if not present' do
+      result = LastFM::Album.get_info('x', 'y')
+      expect(result.released).to be_nil
+    end
+  end
+
   context 'get info' do
     it 'gets a relevant result' do
       artist = 'Sugar'
