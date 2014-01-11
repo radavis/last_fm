@@ -2,7 +2,11 @@ require 'rspec'
 require 'vcr'
 require_relative '../lib/last_fm'
 
-LastFM.api_key = ENV['lastfm_api_key']
+if ENV['lastfm_api_key'] and !ENV['lastfm_api_key'].empty?
+  LastFM.api_key = ENV['lastfm_api_key']
+else
+  raise 'API key not found! Use ENV variable: lastfm_api_key'
+end
 
 VCR.configure do |c|
   c.cassette_library_dir = 'spec/cassettes'
