@@ -14,6 +14,18 @@ module LastFM
   end
 
   def self.api_key
+    load_api_key_from_env if not has_key?
     @api_key
+  end
+
+  def self.has_key?
+    !@api_key.nil? and @api_key != ''
+  end
+
+  def self.load_api_key_from_env
+    @api_key = ENV['lastfm_api_key']
+    if not has_key?
+      raise "API key not found! Try 'export lastfm_api_key=YOUR_KEY'"
+    end
   end
 end
