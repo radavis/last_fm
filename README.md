@@ -6,6 +6,8 @@ Uses the Last.fm API to retrieve information for Artists and Albums
 
 Add `gem 'radavis_last_fm'` to your Gemfile, or `gem install radavis_last_fm`.
 
+Set the `lastfm_api_key` environment variable.
+
 ```
 require 'last_fm'
 artist = LastFM::Artist.search('Nirvana').first
